@@ -1,0 +1,2 @@
+include ':app', ':verma_ui'
+rootProject.name='Widgets'
