@@ -32,3 +32,16 @@ riv.setTileModeX(Shader.TileMode.REPEAT);
 riv.setTileModeY(Shader.TileMode.REPEAT);
 
 
+Transformation transformation = new RoundedTransformationBuilder()
+          .borderColor(Color.BLACK)
+          .borderWidthDp(3)
+          .cornerRadiusDp(30)
+          .oval(false)
+          .build();
+
+Picasso.with(context)
+    .load(url)
+    .fit()
+    .transform(transformation)
+    .into(imageView);
+    
