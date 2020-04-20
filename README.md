@@ -93,21 +93,16 @@ circularImageView.setBorderColorStart(Color.BLACK);
 circularImageView.setBorderColorEnd(Color.RED);
 circularImageView.setBorderColorDirection(CircularImageView.GradientDirection.TOP_TO_BOTTOM);
 
-// Add Shadow with default param
-circularImageView.setShadowEnable(true);
-// or with custom param
-circularImageView.setShadowRadius(7f);
-circularImageView.setShadowColor(Color.RED);
-circularImageView.setShadowGravity(CircularImageView.ShadowGravity.CENTER);
+Transformation transformation = new RoundedTransformationBuilder()
+          .borderColor(Color.BLACK)
+          .borderWidthDp(3)
+          .cornerRadiusDp(30)
+          .oval(false)
+          .build();
 
-<com.verma.android.verma_ui.widget.ui.CircularImageView
-    android:layout_width="250dp"
-    android:layout_height="250dp"
-    android:src="@drawable/image"
-    app:civ_border_color="#3f51b5"
-    app:civ_border_width="4dp"
-    app:civ_shadow="true"
-    app:civ_shadow_radius="10"
-    app:civ_shadow_color="#3f51b5"/>
+Picasso.with(context)
+    .load(url)
+    .fit()
+    .transform(transformation)
+    .into(imageView);
 
-============================================
