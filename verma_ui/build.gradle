@@ -11,11 +11,11 @@ android {
         }
     }
 
-    compileSdkVersion 28
+    compileSdkVersion 29
 
     defaultConfig {
         minSdkVersion 15
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0.0"
 
@@ -50,7 +50,9 @@ dependencies {
 
     implementation 'com.github.bumptech.glide:glide:4.3.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
-}
+
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+ }
 
 
 task planet_deleteArr(type: Delete) {
@@ -62,14 +64,14 @@ task planet_createArr(type: Copy) {
     from('build/outputs/aar/')
     into('output/')
     include('verma_ui-release.aar')
-    rename('verma_ui-release.aar', 'planet_money_ui_lib.aar')
+    rename('verma_ui-release.aar', 'ui_lib.aar')
 }
 
 
 task planet_addToProject(type: Copy) {
     from('output/')
     into('../app/libs/')
-    include('planet_money_ui_lib.aar')
+    include('ui_lib.aar')
 }
 
 planet_createArr.dependsOn(planet_deleteArr, build)
