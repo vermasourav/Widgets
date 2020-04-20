@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
 
 android {
 
@@ -52,7 +54,9 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
 
     implementation 'com.squareup.picasso:picasso:2.5.2'
- }
+    compile "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
 
 
 task planet_deleteArr(type: Delete) {
@@ -76,3 +80,6 @@ task planet_addToProject(type: Copy) {
 
 planet_createArr.dependsOn(planet_deleteArr, build)
 planet_addToProject.dependsOn(planet_createArr)
+repositories {
+    mavenCentral()
+}
