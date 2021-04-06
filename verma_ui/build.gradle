@@ -46,7 +46,7 @@ android {
             jniDebuggable false
             renderscriptDebuggable false
             zipAlignEnabled true
-            signingConfig signingConfigs.KEY
+            signingConfig signingConfigs.KEY_VERMA
         }
     }
 
@@ -71,22 +71,22 @@ dependencies {
 
 
 task verma_deleteArr(type: Delete) {
-    delete 'output/indicator_lib-release.arr'
-    delete 'output/indicator_lib-debug.arr'
+    delete 'output/verma_ui-release.arr'
+    delete 'output/verma_ui-debug.arr'
 }
 
 task verma_createArr(type: Copy) {
     from('build/outputs/aar/')
     into('output/')
-    include('PagerIndicator-release.aar')
-    rename('PagerIndicator-release.aar', 'indicator_lib.aar')
+    include('verma_ui-release.aar')
+    rename('verma_ui-release.aar', 'verma_ui.aar')
 }
 
 
 task verma_addToProject(type: Copy) {
     from('output/')
     into('../app/libs/')
-    include('indicator_lib.aar')
+    include('ui_lib.aar')
 }
 
 verma_createArr.dependsOn(verma_deleteArr, build)
