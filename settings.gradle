@@ -1,2 +1,2 @@
-include ':app', ':verma_ui'
+include ':app', ':verma_ui',":PagerIndicator"
 rootProject.name='Widgets'

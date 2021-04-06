@@ -98,7 +98,7 @@ public class PicassoFragment extends Fragment {
       ImageView imageView = ((ImageView) view.findViewById(R.id.imageView1));
       imageView.setScaleType(item.mScaleType);
 
-      Picasso.with(getContext())
+      Picasso.get()
           .load(item.mUrl)
           .fit()
           .transform(mTransformation)

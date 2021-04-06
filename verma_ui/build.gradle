@@ -11,16 +11,26 @@ android {
             storeFile file("./KEY/planet_money_key.jks")
             storePassword 'vermaPlanet'
         }
+        KEY {
+            if (project.hasProperty('RELEASE_STORE_FILE')) {
+                storeFile file("C:\\Devlopment\\_project\\KEY\\" + RELEASE_STORE_FILE)
+                storePassword RELEASE_STORE_PASSWORD
+                keyAlias RELEASE_KEY_ALIAS
+                keyPassword RELEASE_KEY_PASSWORD
+            } else {
+                throw new GradleException('missing key store variable')
+            }
+        }
     }
 
-    compileSdkVersion 29
+    compileSdkVersion compile_sdk_version
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0.0"
-
+        targetSdkVersion rootProject.target_sdk_version
+        minSdkVersion rootProject.min_sdk_version
+        versionCode rootProject.version_code
+        versionName rootProject.version_name
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
@@ -36,7 +46,7 @@ android {
             jniDebuggable false
             renderscriptDebuggable false
             zipAlignEnabled true
-            signingConfig signingConfigs.KEY_VERMA
+            signingConfig signingConfigs.KEY
         }
     }
 
@@ -45,41 +55,42 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:28.0.0'
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    implementation 'com.github.bumptech.glide:glide:4.3.1'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
-    implementation 'com.squareup.picasso:picasso:2.5.2'
-    compile "androidx.core:core-ktx:+"
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    api "androidx.core:core-ktx:1.3.2"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
 
-task planet_deleteArr(type: Delete) {
-    delete 'output/verma_ui-release.arr'
-    delete 'output/verma_ui-debug.arr'
+task verma_deleteArr(type: Delete) {
+    delete 'output/indicator_lib-release.arr'
+    delete 'output/indicator_lib-debug.arr'
 }
 
-task planet_createArr(type: Copy) {
+task verma_createArr(type: Copy) {
     from('build/outputs/aar/')
     into('output/')
-    include('verma_ui-release.aar')
-    rename('verma_ui-release.aar', 'ui_lib.aar')
+    include('PagerIndicator-release.aar')
+    rename('PagerIndicator-release.aar', 'indicator_lib.aar')
 }
 
 
-task planet_addToProject(type: Copy) {
+task verma_addToProject(type: Copy) {
     from('output/')
     into('../app/libs/')
-    include('ui_lib.aar')
+    include('indicator_lib.aar')
 }
 
-planet_createArr.dependsOn(planet_deleteArr, build)
-planet_addToProject.dependsOn(planet_createArr)
+verma_createArr.dependsOn(verma_deleteArr, build)
+verma_addToProject.dependsOn(verma_createArr)
 repositories {
     mavenCentral()
 }
