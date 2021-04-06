@@ -1,13 +1,13 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion compile_sdk_version
+    compileSdkVersion 30
 
     defaultConfig {
-        targetSdkVersion rootProject.target_sdk_version
-        minSdkVersion rootProject.min_sdk_version
-        versionCode rootProject.version_code
-        versionName rootProject.version_name
+        targetSdkVersion 30
+        minSdkVersion 21
+        versionCode 10003
+        versionName '1.0.3'
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
