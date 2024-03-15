@@ -1,3 +1,5 @@
+package com.verma.android.widgets.readmore
+
 import android.animation.LayoutTransition
 import android.graphics.Color
 import android.os.Handler

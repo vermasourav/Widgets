@@ -1,3 +1,5 @@
+package com.verma.android.widgets.readmore
+
 import android.text.TextPaint
 import android.text.style.ClickableSpan
 import android.view.View

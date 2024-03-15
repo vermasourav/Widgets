@@ -26,6 +26,7 @@ import androidx.annotation.ColorInt;
 import androidx.annotation.DimenRes;
 import androidx.annotation.DrawableRes;
 import androidx.appcompat.widget.AppCompatImageView;
+import androidx.core.content.res.ResourcesCompat;
 
 import com.verma.android.widgets.roundedimageview.Corner;
 import com.verma.android.widgets.roundedimageview.RoundedDrawable;
@@ -259,7 +260,7 @@ public class RoundedImageView extends AppCompatImageView {
 
         if (mResource != 0) {
             try {
-                d = resources.getDrawable(mResource);
+                d = ResourcesCompat.getDrawable(getResources(), mResource, null);
             } catch (Exception e) {
                 Log.w(TAG, "Unable to find resource: " + mResource, e);
                 // Don't try again.
@@ -299,7 +300,8 @@ public class RoundedImageView extends AppCompatImageView {
 
         if (mBackgroundResource != 0) {
             try {
-                d = resources.getDrawable(mBackgroundResource);
+                d = ResourcesCompat.getDrawable(getResources(), mBackgroundResource, null);
+
             } catch (Exception e) {
                 Log.w(TAG, "Unable to find resource: " + mBackgroundResource, e);
                 // Don't try again.
