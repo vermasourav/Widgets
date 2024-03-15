@@ -1,0 +1,48 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">20dp</dimen>
+    <dimen name="activity_vertical_margin">20dp</dimen>
+    <dimen name="input_text_margin">12dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="ex_pv_pin_view_item_size">48dp</dimen>
+    <dimen name="ex_pv_pin_view_item_radius">5dp</dimen>
+    <dimen name="ex_pv_pin_view_item_spacing">5dp</dimen>
+    <dimen name="ex_pv_pin_view_item_line_width">2dp</dimen>
+    <dimen name="ex_pv_pin_view_cursor_width">2dp</dimen>
+
+
+    <!-- Default Support Pin View-->
+    <dimen name="ex_pv_common_padding">5dp</dimen>
+    <color name="ex_pv_text_selected">#b0003a</color>
+    <color name="ex_pv_text_focused">#E91E63</color>
+    <color name="ex_pv_text_default">#F8BBD0</color>
+    <color name="ex_pv_text_hint_default">#BDBDBD</color>
+    <color name="ex_pv_line_selected">#E91E63</color>
+    <color name="ex_pv_line_focused">#3F51B5</color>
+    <color name="ex_pv_line_default">#C5CAE9</color>
+
+
+
+    <!-- Default Support Arc-->
+
+    <dimen name="layout_child_offset_large">144dp</dimen>
+    <dimen name="layout_child_offset_medium">120dp</dimen>
+    <dimen name="layout_child_offset_small">96dp</dimen>
+    <dimen name="layout_child_offset_tumblr">100dp</dimen>
+    <dimen name="layout_child_offset_path">114dp</dimen>
+
+    <dimen name="item_circle_size_large">72dp</dimen>
+    <dimen name="item_circle_size_medium">48dp</dimen>
+    <dimen name="item_circle_size_small">36dp</dimen>
+    <dimen name="item_circle_size_tumblr">70dp</dimen>
+    <dimen name="item_circle_size_path">36dp</dimen>
+
+    <dimen name="item_font_size_large">32sp</dimen>
+    <dimen name="item_font_size_medium">24sp</dimen>
+    <dimen name="item_font_size_small">16sp</dimen>
+    <dimen name="item_font_size_tumblr">30sp</dimen>
+    <dimen name="item_font_size_path">18sp</dimen>
+    <color name="tumblr_primary">#36465D</color>
+
+</resources>

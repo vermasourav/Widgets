@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context=".RoundImageDemoActivity">
+
+        <com.verma.android.widgets.CircularImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/sample"
+            app:civ_border_color="@android:color/holo_red_dark"
+            app:civ_border_width="4dp"
+            app:civ_shadow="true"
+            app:civ_shadow_radius="10dp"
+            app:tintMode="screen"
+            app:civ_shadow_color="@android:color/holo_red_dark"
+            />
+
+        <com.verma.android.widgets.RoundedImageView
+            android:id="@+id/imageView1"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/sample"
+            app:riv_border_color="@android:color/holo_red_dark"
+            app:riv_border_width="5dip"
+            app:riv_corner_radius="30dip"
+            app:riv_mutate_background="true"
+            app:riv_oval="true"
+            app:riv_tile_mode="repeat" />
+
+
+        <com.verma.android.widgets.RoundedImageView
+            android:id="@+id/imageView2"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_margin="10dp"
+            android:background="@android:color/holo_red_dark"
+            android:padding="10dip"
+            android:scaleType="centerCrop"
+            android:src="@drawable/sample"
+            app:riv_border_color="@android:color/transparent"
+            app:riv_border_width="10dip"
+            app:riv_corner_radius="16dip"
+            app:riv_mutate_background="true"
+            app:riv_oval="false" />
+
+        <com.verma.android.widgets.RoundedImageView
+            android:id="@+id/imageViewOval"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/sample"
+            android:scaleType="fitCenter"
+            app:riv_oval="true"
+            />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</ScrollView>

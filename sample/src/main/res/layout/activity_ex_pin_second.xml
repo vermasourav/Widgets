@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="100dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/firstLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/firstPinView"
+        android:layout_alignParentTop="true"
+        android:textStyle="bold"
+        android:text="PIN:" />
+
+    <com.verma.android.widgets.ExPinView
+        android:id="@+id/firstPinView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/firstLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/ex_pv_common_padding"
+        android:layout_marginTop="@dimen/ex_pv_common_padding"
+        android:layout_marginEnd="@dimen/ex_pv_common_padding"
+        android:layout_marginBottom="@dimen/ex_pv_common_padding"
+        android:inputType="number"
+        android:textColor="@color/ex_pv_text_colors"
+        app:itemRadius="@dimen/ex_pv_pin_view_item_radius"
+        app:itemCount="6"/>
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/firstPasswordHidden"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/firstPinView"
+        android:layout_alignBaseline="@+id/firstLabel"
+        android:checked="false"
+        android:text="hidden" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/secondLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/secondPinView"
+        android:layout_below="@+id/firstPinView"
+        android:textStyle="bold"
+        android:text="Password:" />
+
+    <com.verma.android.widgets.ExPinView
+        android:id="@+id/secondPinView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/secondLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/ex_pv_common_padding"
+        android:layout_marginTop="@dimen/ex_pv_common_padding"
+        android:layout_marginEnd="@dimen/ex_pv_common_padding"
+        android:layout_marginBottom="@dimen/ex_pv_common_padding"
+        android:cursorVisible="false"
+        android:inputType="numberPassword"
+        android:textColor="@color/ex_pv_line_colors"
+        app:itemRadius="@dimen/ex_pv_pin_view_item_radius"
+        app:lineColor="@color/ex_pv_line_colors"
+        app:itemCount="5"/>
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/secondPasswordHidden"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/secondPinView"
+        android:layout_alignBaseline="@+id/secondLabel"
+        android:checked="true"
+        android:text="hidden" />
+
+</RelativeLayout>

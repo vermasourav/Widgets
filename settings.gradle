@@ -1,2 +1,18 @@
-include ':app', ':verma_ui',":PagerIndicator"
-rootProject.name='Widgets'
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "Widgets"
+include ':sample'
+include ':Widgets'

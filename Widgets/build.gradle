@@ -1,0 +1,88 @@
+apply plugin: 'com.android.library'
+apply plugin: 'org.jetbrains.kotlin.android'
+
+android {
+
+    namespace 'com.verma.android.widgets'
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 24
+        targetSdk 34
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    signingConfigs {
+        KEY_VERMA {
+            keyAlias 'PLANET_MONEY'
+            keyPassword 'vermaPlanet'
+            storeFile file("./KEY/planet_money_key.jks")
+            storePassword 'vermaPlanet'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.KEY_VERMA
+        }
+    }
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+}
+
+dependencies {
+   // implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation "androidx.navigation:navigation-fragment:2.7.7"
+    implementation "androidx.navigation:navigation-ui:2.7.7"
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    implementation 'androidx.test:monitor:1.6.1'
+    implementation 'androidx.test.ext:junit:1.1.5'
+    implementation 'androidx.core:core-ktx:1.12.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'junit:junit:4.13.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
+
+    // Other
+    api 'com.jakewharton.timber:timber:5.0.1'
+    implementation 'com.google.code.gson:gson:2.10.1'
+}
+
+
+task verma_deleteArr(type: Delete) {
+    delete 'output/Widgets-release.arr'
+    delete 'output/Widgets-debug.arr'
+}
+
+task verma_createArr(type: Copy) {
+    from('build/outputs/aar/')
+    into('output/')
+    include('Widgets-release.aar')
+    rename('Widgets-release.aar', 'Widgets.aar')
+}
+
+
+task verma_addToProject(type: Copy) {
+    from('output/')
+    into('../sample/libs/')
+    include('Widgets.aar')
+}
+
+verma_createArr.dependsOn(verma_deleteArr, build)
+verma_addToProject.dependsOn(verma_createArr)

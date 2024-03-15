@@ -1,0 +1,11 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Widgets" parent="Theme.AppCompat.Light.DarkActionBar">
+    </style>
+
+    <style name="Theme.Widgets" parent="Base.Theme.Widgets" >
+        <item name="exPinViewStyle">@style/exPinWidget.exPinView</item>
+    </style>
+
+
+</resources>
