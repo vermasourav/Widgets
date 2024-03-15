@@ -20,7 +20,7 @@ allprojects {
 
 ``` Groovy
 dependencies {
-   implementation 'com.verma.android.widgets:1.0.0'
+   implementation 'com.verma.android.widgets:2.0.0'
 }
 ```
 
