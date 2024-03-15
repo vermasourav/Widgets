@@ -1,10 +1,6 @@
 # widgets
 Widgets
 
-https://github.com/ChaosLeung/PinView
-https://github.com/EthanCo/PasswordInput/blob/master/ReadMe.md?plain=1
-
-
 ## Dependency
 
 ### Step 1. Add the JitPack repository to your build file ###
