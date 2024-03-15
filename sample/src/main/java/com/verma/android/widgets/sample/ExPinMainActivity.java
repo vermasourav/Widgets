@@ -52,11 +52,12 @@ public class ExPinMainActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-
+                //Do Nothing
             }
         });
         pinView.setItemBackgroundColor(Color.BLACK);
-        pinView.setItemBackground(getResources().getDrawable(com.verma.android.widgets.R.drawable.ex_pv_item_background));
+
+        pinView.setItemBackground(ResourcesCompat.getDrawable(getResources(), com.verma.android.widgets.R.drawable.ex_pv_item_background, null));
         pinView.setItemBackgroundResources(com.verma.android.widgets.R.drawable.ex_pv_item_background);
         pinView.setHideLineWhenFilled(false);
 

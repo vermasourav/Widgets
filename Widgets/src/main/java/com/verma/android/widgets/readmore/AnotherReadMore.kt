@@ -1,7 +1,7 @@
 import android.animation.LayoutTransition
-import android.content.Context
 import android.graphics.Color
 import android.os.Handler
+import android.os.Looper
 import android.text.SpannableString
 import android.text.SpannableStringBuilder
 import android.text.Spanned
@@ -101,7 +101,11 @@ class AnotherReadMore(
             .append(lessLabel)
         val ss = SpannableString.valueOf(spannableStringBuilder)
 
-        val clickableSpan: ClickableSpan = CustomClickableSpan { Handler().post { addReadMoreTo(textView, text) } }
+        val clickableSpan: ClickableSpan = CustomClickableSpan {
+            Handler(Looper.getMainLooper()).postDelayed({
+                addReadMoreTo(textView, text)
+            }, 3000)
+        }
 
         ss.setSpan(
             clickableSpan,
