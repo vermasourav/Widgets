@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
             "RoundedImageView - CircularImageView",
             "Pin",
             "Advance Pin",
-            "XXXX",
+            "Tell Me More",
             "XXXXXX",
            };
     @Override
@@ -51,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, ExPinMainActivity.class));
             }else  if(itemPosition ==2){
                 startActivity(new Intent(this, ExPinSecondActivity.class));
+            }else  if(itemPosition ==3){
+                startActivity(new Intent(this, ReadMoreActivity.class));
             }
         });
 
