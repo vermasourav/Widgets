@@ -10,7 +10,7 @@ android {
         minSdk rootProject.min_sdk_version
         targetSdk rootProject.target_sdk_version
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
+        consumerProguardFiles "proguard-rules.pro"
         //setProperty("archivesBaseName", applicationId + "-v" + versionCode + "(" + versionName + ")")
 
     }

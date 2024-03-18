@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
 }
+//apply from: rootProject.file('./app/signing.gradle')
 
 android {
     namespace 'com.verma.android.widgets.sample'

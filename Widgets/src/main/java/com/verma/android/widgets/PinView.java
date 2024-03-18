@@ -150,19 +150,19 @@ public class PinView extends LinearLayout implements TextWatcher, View.OnFocusCh
      */
     private void initAttributes(Context context, AttributeSet attrs, int defStyleAttr) {
         if (attrs != null) {
-            final TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.Pinview, defStyleAttr, 0);
-            mPinBackground = array.getResourceId(R.styleable.Pinview_pinBackground, mPinBackground);
-            mPinLength = array.getInt(R.styleable.Pinview_pinLength, mPinLength);
-            mPinHeight = (int) array.getDimension(R.styleable.Pinview_pinHeight, mPinHeight);
-            mPinWidth = (int) array.getDimension(R.styleable.Pinview_pinWidth, mPinWidth);
-            mSplitWidth = (int) array.getDimension(R.styleable.Pinview_splitWidth, mSplitWidth);
-            mTextSize = (int) array.getDimension(R.styleable.Pinview_textSize, mTextSize);
-            mCursorVisible = array.getBoolean(R.styleable.Pinview_cursorVisible, mCursorVisible);
-            mPassword = array.getBoolean(R.styleable.Pinview_password, mPassword);
-            mForceKeyboard = array.getBoolean(R.styleable.Pinview_forceKeyboard, mForceKeyboard);
-            mHint = array.getString(R.styleable.Pinview_hint);
+            final TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.PinView, defStyleAttr, 0);
+            mPinBackground = array.getResourceId(R.styleable.PinView_pinBackground, mPinBackground);
+            mPinLength = array.getInt(R.styleable.PinView_pinLength, mPinLength);
+            mPinHeight = (int) array.getDimension(R.styleable.PinView_pinHeight, mPinHeight);
+            mPinWidth = (int) array.getDimension(R.styleable.PinView_pinWidth, mPinWidth);
+            mSplitWidth = (int) array.getDimension(R.styleable.PinView_splitWidth, mSplitWidth);
+            mTextSize = (int) array.getDimension(R.styleable.PinView_textSize, mTextSize);
+            mCursorVisible = array.getBoolean(R.styleable.PinView_cursorVisible, mCursorVisible);
+            mPassword = array.getBoolean(R.styleable.PinView_password, mPassword);
+            mForceKeyboard = array.getBoolean(R.styleable.PinView_forceKeyboard, mForceKeyboard);
+            mHint = array.getString(R.styleable.PinView_hint);
             InputType[] its = InputType.values();
-            inputType = its[array.getInt(R.styleable.Pinview_inputType, 0)];
+            inputType = its[array.getInt(R.styleable.PinView_inputType, 0)];
             array.recycle();
         }
     }

@@ -157,7 +157,6 @@ public class RoundedImageView extends AppCompatImageView {
         updateBackgroundDrawableAttrs(true);
 
         if (mMutateBackground) {
-            //noinspection deprecation
             super.setBackgroundDrawable(mBackgroundDrawable);
         }
 
@@ -165,16 +164,12 @@ public class RoundedImageView extends AppCompatImageView {
     }
 
     private static Shader.TileMode parseTileMode(int tileMode) {
-        switch (tileMode) {
-            case TILE_MODE_CLAMP:
-                return Shader.TileMode.CLAMP;
-            case TILE_MODE_REPEAT:
-                return Shader.TileMode.REPEAT;
-            case TILE_MODE_MIRROR:
-                return Shader.TileMode.MIRROR;
-            default:
-                return null;
-        }
+        return switch (tileMode) {
+            case TILE_MODE_CLAMP -> Shader.TileMode.CLAMP;
+            case TILE_MODE_REPEAT -> Shader.TileMode.REPEAT;
+            case TILE_MODE_MIRROR -> Shader.TileMode.MIRROR;
+            default -> null;
+        };
     }
 
     @Override
@@ -198,18 +193,9 @@ public class RoundedImageView extends AppCompatImageView {
             mScaleType = scaleType;
 
             switch (scaleType) {
-                case CENTER:
-                case CENTER_CROP:
-                case CENTER_INSIDE:
-                case FIT_CENTER:
-                case FIT_START:
-                case FIT_END:
-                case FIT_XY:
-                    super.setScaleType(ScaleType.FIT_XY);
-                    break;
-                default:
-                    super.setScaleType(scaleType);
-                    break;
+                case CENTER, CENTER_CROP, CENTER_INSIDE, FIT_CENTER, FIT_START, FIT_END, FIT_XY ->
+                        super.setScaleType(ScaleType.FIT_XY);
+                default -> super.setScaleType(scaleType);
             }
 
             updateDrawableAttrs();
@@ -388,7 +374,6 @@ public class RoundedImageView extends AppCompatImageView {
     public void setBackgroundDrawable(Drawable background) {
         mBackgroundDrawable = background;
         updateBackgroundDrawableAttrs(true);
-        //noinspection deprecation
         super.setBackgroundDrawable(mBackgroundDrawable);
     }
 

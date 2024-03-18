@@ -73,7 +73,7 @@
 
 
 
-    <declare-styleable name="Pinview">
+    <declare-styleable name="PinView">
         <attr name="pinBackground" format="reference" />
         <attr name="pinLength" format="integer" />
         <attr name="pinWidth" format="dimension" />
