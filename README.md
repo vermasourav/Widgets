@@ -20,7 +20,7 @@ allprojects {
 
 ``` Groovy
 dependencies {
-   implementation 'com.verma.android.widgets:2.0.0'
+   implementation 'com.github.vermasourav:Widgets:2.0.0'
 }
 ```
 
@@ -136,8 +136,8 @@ circularImageView.apply {
 
 Provides a widget for enter PIN/OTP/password etc
 
-<p><img src="Screenshots/styles.png" width="35%" />
-<img src="Screenshots/input.gif" width="35%" /></p>
+<p><img src="Screenshots/Screenshort_2.png" width="35%" />
+<img src="Screenshots/Screenshort_3.png" width="35%" /></p>
 
 
 ### Usage
@@ -263,6 +263,19 @@ or add `android:cursorVisible="true"`.
 * **itemBackground**, the item background.
 * **hideLineWhenFilled**, specifies whether the line (border) should be hidden or visible when text entered.
 
+
+
+## Screenshots
+<p>
+    <img src="Screenshots/Screenshort_1.png" width="35%" />
+    <img src="Screenshots/Screenshort_2.png" width="35%" />
+    <img src="Screenshots/Screenshort_3.png" width="35%" />
+    <img src="Screenshots/Screenshort_4.png" width="35%" />
+    <img src="Screenshots/Screenshort_5.png" width="35%" />
+
+</p>
+
+ 
 ## Thanks
 
 ## License
