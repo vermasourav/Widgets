@@ -136,8 +136,8 @@ circularImageView.apply {
 
 Provides a widget for enter PIN/OTP/password etc
 
-<p><img src="Screenshots/Screenshort_2.png" width="35%" />
-<img src="Screenshots/Screenshort_3.png" width="35%" /></p>
+<p><img src="Screenshots/Screenshot_3.png" width="35%" />
+<img src="Screenshots/Screenshot_4.png" width="35%" /></p>
 
 
 ### Usage
@@ -267,11 +267,11 @@ or add `android:cursorVisible="true"`.
 
 ## Screenshots
 <p>
-    <img src="Screenshots/Screenshort_1.png" width="35%" />
-    <img src="Screenshots/Screenshort_2.png" width="35%" />
-    <img src="Screenshots/Screenshort_3.png" width="35%" />
-    <img src="Screenshots/Screenshort_4.png" width="35%" />
-    <img src="Screenshots/Screenshort_5.png" width="35%" />
+    <img src="Screenshots/Screenshot_1.png" width="35%" />
+    <img src="Screenshots/Screenshot_2.png" width="35%" />
+    <img src="Screenshots/Screenshot_3.png" width="35%" />
+    <img src="Screenshots/Screenshot_4.png" width="35%" />
+    <img src="Screenshots/Screenshot_5.png" width="35%" />
 
 </p>
 
