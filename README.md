@@ -20,7 +20,7 @@ allprojects {
 
 ``` Groovy
 dependencies {
-   implementation 'com.github.vermasourav:Widgets:2.0.0'
+   implementation 'com.github.vermasourav:Widgets:2.0.1'
 }
 ```
 
