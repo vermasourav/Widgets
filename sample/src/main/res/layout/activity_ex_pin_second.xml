@@ -63,6 +63,7 @@
         android:inputType="numberPassword"
         android:textColor="@color/ex_pv_line_colors"
         app:itemRadius="@dimen/ex_pv_pin_view_item_radius"
+        android:contentDescription=""
         app:lineColor="@color/ex_pv_line_colors"
         app:itemCount="5"/>
 
@@ -72,6 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/secondPinView"
         android:layout_alignBaseline="@+id/secondLabel"
+        android:contentDescription=""
         android:checked="true"
         android:text="hidden" />
 

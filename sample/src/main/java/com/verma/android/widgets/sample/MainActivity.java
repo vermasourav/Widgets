@@ -7,6 +7,9 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatTextView;
+
+import com.verma.android.widgets.utils.BlinkAnimation;
 
 import java.util.ArrayList;
 
@@ -14,12 +17,14 @@ public class MainActivity extends AppCompatActivity {
 
     public ArrayAdapter adapter;
     public ListView listView ;
+    public AppCompatTextView textView ;
 
     String[] values = new String[] {
             "RoundedImageView - CircularImageView",
             "Pin",
             "Advance Pin",
             "Tell Me More",
+            "Expandable Text View",
             "XXXXXX",
            };
     @Override
@@ -27,8 +32,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView = findViewById(R.id.demoList);
+        textView = findViewById(R.id.header_title);
 
         intView();
+        BlinkAnimation blinkAnimation = new BlinkAnimation();
+        blinkAnimation.blinkText(textView, new String[]{"A","B","C"}, 5000);
     }
 
     private void intView() {

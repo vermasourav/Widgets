@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">VERMA_UI</string>
+    <string name="app_name">VERMA Widgets</string>
+
+    <string name="show_more">show more</string>
+    <string name="show_less">show less</string>
+    <string name="show_more_h">→ show more</string>
+    <string name="show_less_h">← less</string>
+    <string name="show_more_v">↓ show more</string>
+    <string name="show_less_v">↑ less</string>
 </resources>
